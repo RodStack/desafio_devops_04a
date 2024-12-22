@@ -1,18 +1,16 @@
+
 const express = require('express');
 const app = express();
-const PORT = 3000
+const PORT = 3000;
 
 
-
-app.get('/api/:mensaje', (req, res) => {
+app.get('/', (req, res) => {
   res.json({
-    mensaje: decodeURI(req.params.mensaje)
+    mensaje: `Hola, estoy desplegando la aplicación ahora desde GitHub Actions`,
+    fecha: new Date()
   });
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
 });
-
